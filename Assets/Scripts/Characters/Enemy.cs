@@ -1,0 +1,14 @@
+using UnityEngine;
+
+public class Enemy : Characters
+{
+    private void Update()
+    {
+        switch (state)
+        {
+            case CharState.Walk:
+                WalkUpdate();
+                break;
+        }
+    }
+}
