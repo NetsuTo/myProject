@@ -25,17 +25,17 @@ public class Magic
 
     [SerializeField]
     private float shootTime;
-    public float ShootTime { get { return shootTime; } }
+    public float ShootTime { get {return shootTime; } }
 
     [SerializeField]
-    private int loadId;
-    public int LoadID { get { return loadId; } }
+    private int loadID;
+    public int LoadID { get { return loadID; } }
 
     [SerializeField]
-    private int shootId;
-    public int ShootID { get { return shootId; } }
+    private int shootID;
+    public int ShootID { get {return shootID; } }
 
-    public Magic(int id, string name, float range, int power, float loadTime, float shootTime, int loadId, int shootId)
+    public Magic(int id, string name, float range, int power, float loadTime, float shootTime, int loadID, int shootID)
     {
         this.id = id;
         this.name = name;
@@ -43,21 +43,7 @@ public class Magic
         this.power = power;
         this.loadTime = loadTime;
         this.shootTime = shootTime;
-        this.loadId = loadId;
-        this.shootId = shootId;
-    }
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        this.loadID = loadID;
+        this.shootID = shootID;
     }
 }

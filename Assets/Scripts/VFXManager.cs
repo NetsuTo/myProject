@@ -11,34 +11,31 @@ public class VFXManager : MonoBehaviour
     public GameObject[] MagicVFX { get { return magicVFX; } }
 
     public static VFXManager instance;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Awake()
     {
         instance = this;
     }
 
-    public void LoadMagic(int id, Vector3 posA, float time)
+    public void LoadMagic(int id, Vector3 posA , float time)
     {
         if (magicVFX[id] == null)
             return;
 
-        GameObject objLoad = Instantiate(magicVFX[id], posA, Quaternion.identity);
+        posA = posA + new Vector3(0, 1f, 0);
+        GameObject objLoad = Instantiate(MagicVFX[id], posA, Quaternion.identity);
         Destroy(objLoad, time);
     }
 
     public void ShootMagic(int id, Vector3 posA, Vector3 posB, float time)
     {
-        if (magicVFX[id] == null) 
+        if(magicVFX[id] == null)
             return;
 
-        GameObject objShoot = Instantiate(magicVFX[id], posA, Quaternion.identity);
+        posA = posA + new Vector3(0, 1f, 0);
+        posB = posB + new Vector3(0, 1f, 0);
+        GameObject objShoot = Instantiate(MagicVFX[id], posA, Quaternion.identity);
         objShoot.transform.position = Vector3.LerpUnclamped(posA, posB, time);
         Destroy(objShoot, time);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
