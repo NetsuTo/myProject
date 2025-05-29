@@ -12,6 +12,10 @@ public class PartyManager : MonoBehaviour
     private List<Characters> selectChars = new List<Characters>();
     public List<Characters> SelectChars { get { return selectChars; } }
 
+    [SerializeField]
+    private List<Quest> questList = new List<Quest>();
+    public List<Quest> QuestList { get { return questList; } }
+
     public static PartyManager instance;
 
     void Awake()
@@ -23,7 +27,7 @@ public class PartyManager : MonoBehaviour
     {
         foreach (Characters c in members) 
         { 
-            c.charInit(VFXManager.instance, UIManager.instance);
+            c.charInit(VFXManager.instance, UIManager.instance, InventoryManager.instance);
         }
 
         SelectSingleHero(0);
@@ -32,6 +36,17 @@ public class PartyManager : MonoBehaviour
         members[0].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[1]));
         members[1].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[1]));
         members[1].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[2]));
+
+        InventoryManager.instance.AddItem(members[0], 0);
+        InventoryManager.instance.AddItem(members[0], 1);
+        InventoryManager.instance.AddItem(members[0], 3);
+        InventoryManager.instance.AddItem(members[0], 4);
+        InventoryManager.instance.AddItem(members[0], 6);
+
+        InventoryManager.instance.AddItem(members[1], 0);
+        InventoryManager.instance.AddItem(members[1], 1);
+        InventoryManager.instance.AddItem(members[1], 2);
+        InventoryManager.instance.AddItem(members[1], 5);
 
         UIManager.instance.ShowMagicToggle();
     }

@@ -4,12 +4,13 @@ public enum ItemType
 {
     Consumable,
     Equipment,
+    Shield,
+    Armor,
     Weapon,
     Ammo,
     Quest,
     Other
 }
-
 [System.Serializable]
 public class Item
 {
@@ -33,6 +34,10 @@ public class Item
     private int power;
     public int Power { get { return power; } }
 
+    [SerializeField]
+    private int prefabID;
+    public int PrefabID {  get { return prefabID; } }
+
     public Item(ItemData data)
     {
         id = data.id;
@@ -40,19 +45,6 @@ public class Item
         type = data.type;
         icon = data.icon;
         power = data.power;
-    }
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        prefabID = data.prefabID;
     }
 }

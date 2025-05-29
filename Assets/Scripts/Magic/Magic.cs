@@ -32,23 +32,23 @@ public class Magic
     public float ShootTime { get {return shootTime; } }
 
     [SerializeField]
-    private int loadID;
-    public int LoadID { get { return loadID; } }
+    private int loadId;
+    public int LoadId { get { return loadId; } }
 
     [SerializeField]
-    private int shootID;
-    public int ShootID { get {return shootID; } }
+    private int shootId;
+    public int ShootId { get {return shootId; } }
 
     public Magic(MagicData data)
-    {
+    { 
         id = data.id;
-        name = data.name;
+        name = data.magicName;
         icon = data.icon;
         range = data.range;
         power = data.power;
         loadTime = data.loadTime;
         shootTime = data.shootTime;
-        loadID = data.loadId;
-        shootID = data.shootId;
+        loadId = data.loadId;
+        shootId = data.shootId;
     }
 }
