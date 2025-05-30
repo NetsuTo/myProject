@@ -509,7 +509,7 @@ Animator:
   m_GameObject: {fileID: 112422}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b69174d668ba02d44b14a084b217670a, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80d89f40bd6df7e4aa3ee59026eb8e3a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -578,8 +578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6567cebd5fd614ab57fbd69e77a982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avatarPic: {fileID: 21300000, guid: 807cc0fc07ada83469620b19720f4667, type: 3}
-  charName: Vision
+  avatarPic: {fileID: 21300000, guid: e2a8f036302401f429807f72b1ff799e, type: 3}
+  charName: Stark
   state: 0
   ringSelection: {fileID: 3865090309115903068}
   curHP: 100
@@ -624,6 +624,7 @@ MonoBehaviour:
   defensePower: 0
   weaponHand: {fileID: 456588}
   weaponObj: {fileID: 0}
+  prefabId: 1
   exp: 0
   level: 1
   nextExp: 30
